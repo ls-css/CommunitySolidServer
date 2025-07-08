@@ -15,6 +15,10 @@ To persist your pod's contents between restarts, use:
 ```shell
 npx @solid/community-server -c @css:config/file.json -f data/
 ```
+To run the server with a MinIO/S3 backend, use:
+```shell
+npx @solid/community-server -c @css:config/minio.json
+```
 
 ## Local installation
 
@@ -34,6 +38,10 @@ To run the server with your current folder as storage, use:
 
 ```shell
 community-solid-server -c @css:config/file.json -f data/
+```
+To run the server with a MinIO/S3 backend, use:
+```shell
+community-solid-server -c @css:config/minio.json
 ```
 
 ## Configuring the server
@@ -56,7 +64,7 @@ to some commonly used settings:
 | `--baseUrl, -b`         | `http://localhost:$PORT/`  | The base URL used internally to generate URLs. Change this if your server does not run on `http://localhost:$PORT/`.                          |
 | `--socket`              |                            | The Unix Domain Socket on which the server should listen. `--baseUrl` must be set if this option is provided                                  |
 | `--loggingLevel, -l`    | `info`                     | The detail level of logging; useful for debugging problems. Use `debug` for full information.                                                 |
-| `--config, -c`          | `@css:config/default.json` | The configuration(s) for the server. The default only stores data in memory; to persist to your filesystem, use `@css:config/file.json`       |
+| `--config, -c`          | `@css:config/default.json` | The configuration(s) for the server. The default only stores data in memory; to persist to your filesystem, use `@css:config/file.json`. For MinIO/S3 storage use `@css:config/minio.json` |
 | `--rootFilePath, -f`    | `./`                       | Root folder where the server stores data, when using a file-based configuration.                                                              |
 | `--sparqlEndpoint, -s`  |                            | URL of the SPARQL endpoint, when using a quadstore-based configuration.                                                                       |
 | `--showStackTrace, -t`  | false                      | Enables detailed logging on error output.                                                                                                     |

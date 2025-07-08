@@ -46,6 +46,10 @@ To persist your pod's contents between restarts, use:
 ```shell
 npx @solid/community-server -c @css:config/file.json -f data/
 ```
+To store data in a MinIO/S3 backend, use:
+```shell
+npx @solid/community-server -c @css:config/minio.json
+```
 
 In case you prefer to use Docker instead,
 you can find instructions for this and other methods in the
