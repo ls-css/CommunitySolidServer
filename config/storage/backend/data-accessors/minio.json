@@ -1,0 +1,17 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^7.0.0/components/context.jsonld",
+  "@graph": [
+    {
+      "comment": "Stores data on a MinIO or S3 backend.",
+      "@id": "urn:solid-server:default:MinioDataAccessor",
+      "@type": "MinioDataAccessor",
+      "endPoint": "localhost",
+      "port": 9000,
+      "useSSL": false,
+      "accessKey": "minioadmin",
+      "secretKey": "minioadmin",
+      "bucket": "css",
+      "identifierStrategy": { "@id": "urn:solid-server:default:IdentifierStrategy" }
+    }
+  ]
+}
